@@ -1,0 +1,11 @@
+h1 {
+  font-family: "Nunito", sans-serif;
+}
+button,
+input {
+  margin: 2px;
+}
+
+#info p {
+  font-weight: bolder;
+}
