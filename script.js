@@ -92,16 +92,18 @@ function getNumQuotes(num_of_q) {
 }
 
 function generateInfo() {
-  axios
-    .get("https://api.tvmaze.com/search/people?q=nick+offerman")
-    .then((response) => {
-      const json = response.data;
-      let name = document.createElement("p");
-      name.textContent = json[0].person.name;
-      info.appendChild(name);
+  axios.get("https://api.tvmaze.com/shows/174/cast").then((response) => {
+    const json = response.data;
+    let name = document.createElement("p");
+    name.textContent = "Actor: " + json[1].person.name;
+    info.appendChild(name);
 
-      let img = document.createElement("img");
-      img.src = json[0].person.image.medium;
-      info.appendChild(img);
-    });
+    let character = document.createElement("p");
+    character.textContent = "Character: " + json[1].character.name;
+    info.appendChild(character);
+
+    let img = document.createElement("img");
+    img.src = json[0].character.image.original;
+    info.appendChild(img);
+  });
 }
