@@ -27,8 +27,19 @@ button {
 input {
   width: 200px;
 }
+
+#info {
+  background-color: #be7151;
+  width: 25%;
+  margin: auto;
+  border-radius: 3px;
+}
 #info p {
+  margin-bottom: -2px;
+  padding: 3px;
   font-weight: bolder;
+  font-size: 18px;
+  color: black;
 }
 
 .quote {
