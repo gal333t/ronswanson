@@ -20,7 +20,7 @@ randomButton.addEventListener("click", (event) => {
 
 function getRandom() {
   axios
-    .get("http://ron-swanson-quotes.herokuapp.com/v2/quotes")
+    .get("https://ron-swanson-quotes.herokuapp.com/v2/quotes")
     .then((response) => {
       let loading = document.getElementById("loading");
       loading.remove();
@@ -42,7 +42,7 @@ function getSearchQuote() {
   console.log("hi");
 }
 
-searchNumQuotes.addEventListener("click", (event) => {
+searchNumButton.addEventListener("click", (event) => {
   container.innerHTML = "";
   info.innerHTML = "";
   loading();
