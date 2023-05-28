@@ -7,13 +7,9 @@ let numberOfQuotes = document.getElementById("search-num-quotes");
 let searchWord = document.getElementById("search-quote");
 
 function loading() {
-  let loading = document.createElement("h3");
   let loadingImg = document.createElement("img");
   loadingImg.src = "https://i.giphy.com/media/uLMxqxVvVtuVO/giphy.webp";
-  loading.textContent = "Loading....";
-  loading.setAttribute("id", "loading-text");
   loadingImg.setAttribute("id", "loading");
-  container.appendChild(loading);
   container.appendChild(loadingImg);
 }
 
@@ -29,8 +25,6 @@ function getRandom() {
     .get("https://ron-swanson-quotes.herokuapp.com/v2/quotes")
     .then((response) => {
       let loading = document.getElementById("loading");
-      let loadingText = document.getElementById("loading-text");
-      loadingText.remove();
       loading.remove();
       const random = response.data;
       let p = document.createElement("p");
@@ -54,12 +48,10 @@ function getSearchQuote(searchTerm) {
     )
     .then((response) => {
       let loading = document.getElementById("loading");
-
       loading.remove();
-      let searchResutls = response.data;
-
-      if (searchResutls.length !== 0) {
-        for (search of searchResutls) {
+      let searchResults = response.data;
+      if (searchResults.length !== 0) {
+        for (search of searchResults) {
           let p = document.createElement("p");
           p.classList.add("quote");
           p.textContent = `"${search}"`;
@@ -85,8 +77,6 @@ function getNumQuotes(num_of_q) {
     .get(`https://ron-swanson-quotes.herokuapp.com/v2/quotes/${num_of_q}`)
     .then((response) => {
       let loading = document.getElementById("loading");
-      let loadingText = document.getElementById("loading-text");
-      loadingText.remove();
       loading.remove();
       const random = response.data;
       console.log(random);
@@ -115,7 +105,3 @@ function generateInfo() {
       info.appendChild(img);
     });
 }
-generateInfo();
-
-// search the entire show by IMDB num https://api.tvmaze.com/lookup/shows?imdb=tt1266020
-// https://api.tvmaze.com/search/people?q=nick+offerman
