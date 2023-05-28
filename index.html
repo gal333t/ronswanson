@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ron Swanson Quotes</title>
-    <link href="style.css" rel="stylesheet" />
-  </head>
 
-  <body>
-    <header><h1>Ron Swanson Quotes</h1></header>
-    <div id="form-container">
-      <button id="info-button">Who IS Ron Swanson?</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ron Swanson Quotes</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <h1>Ron Swanson Quotes</h1>
+  </header>
+  <div id="form-container">
+    <button id="info-button">Who IS Ron Swanson?</button>
+    <br />
+    <button id="random-button">Randomly generate a quote</button>
+    <br />
+
+    <form>
+      <input type="text" id="search-quote" />
+
+      <button type="button" id="search-button">
+        Search for quotes by specific word
+      </button>
       <br />
-      <button id="random-button">Randomly generate a quote</button>
-      <br />
+      <input type="number" id="search-num-quotes" min="2" max="5" />
+      <button type="button" id="search-num-button">
+        Search for multiple quotes at once
+      </button>
+    </form>
 
-      <form>
-        <input type="text" id="search-quote" />
+    <br />
+  </div>
 
-        <button type="button" id="search-button">
-          Search a quote by specific word
-        </button>
-        <br />
-        <input type="number" id="search-num-quotes" min="2" max="5" />
-        <button type="button" id="search-num-button">
-          Search for multiple quotes at once
-        </button>
-      </form>
+  <section class="container"></section>
 
-      <br />
-    </div>
+  <div id="info"></div>
 
-    <section class="container"></section>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
 
-    <div id="info"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="script.js"></script>
-  </body>
 </html>
