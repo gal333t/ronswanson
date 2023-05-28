@@ -92,7 +92,7 @@ function getNumQuotes(num_of_q) {
   console.log("hi" + num_of_q + "bye");
 }
 
-searchButton.addEventListener("click", (event) => {
+infoButton.addEventListener("click", (event) => {
   container.innerHTML = "";
   info.innerHTML = "";
   loading();
