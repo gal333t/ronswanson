@@ -101,6 +101,8 @@ infoButton.addEventListener("click", (event) => {
 
 function generateInfo() {
   axios.get("https://api.tvmaze.com/shows/174/cast").then((response) => {
+    let loading = document.getElementById("loading");
+    loading.remove();
     const json = response.data;
     let name = document.createElement("p");
     name.textContent = "Actor: " + json[1].person.name;
@@ -111,7 +113,7 @@ function generateInfo() {
     info.appendChild(character);
 
     let img = document.createElement("img");
-    img.src = json[0].character.image.original;
+    img.src = json[1].character.image.original;
     info.appendChild(img);
   });
 }
