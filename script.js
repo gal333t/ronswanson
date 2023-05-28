@@ -6,9 +6,13 @@ const searchNumButton = document.getElementById("search-num-quotes");
 
 function loading() {
   let loading = document.createElement("h3");
+  let loadingImg = document.createElement("img");
+  loadingImg.src =
+    "https://media2.giphy.com/media/XW7QL1Oj14vuKNrcgo/giphy.gif?cid=ecf05e4759rhzu3exw45c756nfjon7f0j33kr8tmat2xqjwu&ep=v1_gifs_related&rid=giphy.gif&ct=g";
   loading.textContent = "Loading....";
-  loading.setAttribute("id", "loading");
+  loadingImg.setAttribute("id", "loading");
   container.appendChild(loading);
+  container.appendChild(loadingImg);
 }
 
 randomButton.addEventListener("click", (event) => {
@@ -42,7 +46,7 @@ function getSearchQuote() {
   console.log("hi");
 }
 
-searchNumQuotes.addEventListener("click", (event) => {
+searchNumButton.addEventListener("click", (event) => {
   container.innerHTML = "";
   info.innerHTML = "";
   loading();
