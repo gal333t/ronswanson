@@ -5,6 +5,7 @@ const searchButton = document.getElementById("search-button");
 const searchNumButton = document.getElementById("search-num-button");
 let numberOfQuotes = document.getElementById("search-num-quotes");
 let searchWord = document.getElementById("search-quote");
+const infoButton = document.getElementById("info-button");
 
 function loading() {
   let loadingImg = document.createElement("img");
@@ -90,6 +91,13 @@ function getNumQuotes(num_of_q) {
     });
   console.log("hi" + num_of_q + "bye");
 }
+
+searchButton.addEventListener("click", (event) => {
+  container.innerHTML = "";
+  info.innerHTML = "";
+  loading();
+  generateInfo();
+});
 
 function generateInfo() {
   axios.get("https://api.tvmaze.com/shows/174/cast").then((response) => {
