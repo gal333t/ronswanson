@@ -105,12 +105,16 @@ function generateInfo() {
     loading.remove();
     const json = response.data;
     let name = document.createElement("p");
-    name.textContent = "Actor: " + json[1].person.name;
+    name.innerText =
+      "Actor: " +
+      json[1].person.name +
+      "\n Character: " +
+      json[1].character.name;
     info.appendChild(name);
 
-    let character = document.createElement("p");
-    character.textContent = "Character: " + json[1].character.name;
-    info.appendChild(character);
+    // let character = document.createElement("p");
+    // character.textContent = "Character: " + json[1].character.name;
+    // info.appendChild(character);
 
     let img = document.createElement("img");
     img.src = json[1].character.image.original;
